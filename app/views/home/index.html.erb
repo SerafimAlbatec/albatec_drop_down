@@ -1,0 +1,126 @@
+
+
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw"class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><a href="/">Εταιρία</a></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+          <% if false %>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+
+                <div class="item active">
+                  <%= image_tag("/app/images/8.jpg", :height => "5%", :width => "100%", alt: "Edit Entry" ) %>
+                  <div class="carousel-caption">
+                    <%= link_to "Μηχανίματα" ,home_mixanimata_path , class: "btn btn-primary"%>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <%= image_tag("/app/images/analosima.jpg", :size => "664x100" ) %>
+                  <div class="carousel-caption">
+                    <%= link_to "Αναλώσημα" ,home_analosima_router_path , class: "btn btn-primary"%>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <%= image_tag("/app/images/software.jpg", :height => "10%", :width => "100%" ) %>
+                  <div class="carousel-caption">
+                    <%= link_to "software" ,home_software_path , class: "btn btn-success"%>
+                  </div>
+                </div>
+                
+
+              </div>
+
+              </div>
+              <% end %>
+              <!--Carouzel-->
+        </div>
+    </div>
+    <div class="row">
+        <!--Αρχή αριστερής λίστας που κατεβαίνει-->
+        <div class="col-md-3 col-xs-0" id="leftCol">
+            <ul class="nav nav-stacked" id="home1">
+                <li><a href="#sec0" class=""><span class="glyphicon glyphicon-briefcase"></span> Συνεργασία με την εταιρία Böhme Kunststofftechnik</a>
+                </li>
+                <li><a href="#sec1" class=""><span class="glyphicon glyphicon-briefcase"></span> Πωλήσεις μηχανολογικού εξοπλισμού</a>
+                </li>
+                <li><a href="#sec2" class=""><span class="glyphicon glyphicon-briefcase"></span> H εταιρεία Albatec</a>
+                </li>
+                <li><a href="#panw" class=""><span class="glyphicon glyphicon-chevron-up"></span> Επάνω</a>
+                </li>
+            </ul>
+
+        </div>
+        <!--/left-->
+        <!--right-->
+        <div class="col-md-6">
+             <h2 id="sec0" class="">Εταιρία</br><small>Συνεργασία με την εταιρία Böhme Kunststofftechnik</small></h2>
+
+             <div class="row">
+                <div class="col-md-4">
+                    <%= link_to image_tag(@image_logo_bohme.name) %>
+                </div>
+            </div>
+            </br>
+            <p class="">Nέα συνεργασία με την εταιρία Böhme για μεμβράνες συγκόλλησης PVC.</br>
+            Τεφλόν συγκόλλησης σε διάφορους τύπους (Standard, premium,expert) κομμένο ανάλογα με τον τύπο του μηχανήματος, ή με το μέτρο (1m2).</br>
+            0.14-0.15-0.15P-0.15S</br>
+            Stürtz, Elumatec, Urban, KMW, Actual, Soenen Hendrik, Hollinger, Wegoma, Rotox, STB, Someco, Lisi, PV Tecnic, Kombimatec, Emmegi, Me.c.al., Murat, Yilmaz, Kaban, Hassomat</p>
+
+            <hr class="">
+            <h2 id="sec1" class="">Εταιρία</br><small>Πωλήσεις μηχανολογικού εξοπλισμού</small></h2>
+
+            <p class="">Η εταιρία μας είναι σε συνεχή αναζήτηση μηχανημάτων για την εξυπηρέτηση των πελατών της.</br> 
+            Μεταχειρισμένα μηχανήματα και αναλώσιμα σε παρακαταθήκη ανά πάσα στιγμή.</br>
+            Είμαστε σε θέση να προσφέρουμε υψηλής ποιότητας μηχανήματα από οποιονδήποτε κατασκευαστή για την επεξεργασία προφίλ Αλουμινίου & PVC.</p>
+            
+            <hr class="">
+             <h2 id="sec2" class="">Εταιρία</br><small>H εταιρεία Albatec</small></h2>
+
+            <p class="">H εταιρεία Albatec δραστηριοποιείται στο χώρο της κατασκευής κουφωμάτων αλουμινίου - PVC και ξύλου παρέχοντας υπηρεσίες εμπορίας (μηχανήματα, αναλώσιμα, ανταλλακτικά) και οργάνωσης παραγωγής (βελτιστοποίηση παραγωγής, software, κ.α.) σε Ελλάδα και Κύπρο.
+
+            Η πολυετής παρουσία στον χώρο της αντιπροσώπευσης μηχανολογικού εξοπλισμού ( Elumatec, Sturtz, Wegoma, κ.α.) και της παροχής υπηρεσιών οργάνωσης παραγωγής (Sungate) εγγυάται την κατάλληλη λύση για κάθε κατασκευαστική ανάγκη.
+
+            Αναλυτικότερα:
+            <ol>
+                <li>Διάθεση σε Ελλάδα και Κύπρο μηχανημάτων υψηλής ποιότητας και τεχνολογίας για την κατασκευή κουφωμάτων Αλουμινίου & PVC</li>
+                <li>Εισαγωγή και εξαγωγή μεταχειρισμένων μηχανημάτων από Ελλάδα και το εξωτερικό</li>
+                <li>Διάθεση σε Ελλάδα και Κύπρο αναλωσίμων και κοπτικών εργαλείων της εταιρίας WEMARO</li>
+                <li>Διάθεση σε Ελλάδα και Κύπρο του προγράμματος κατασκευών Sungate</li>
+                <li>Υποστήριξη προγραμματισμού CNC κέντρων κατεργασιών ανεξαρτήτως τύπου και κατασκευαστή (elumatec, emmegi, rotox, federhenn, bjm, haffner, URBAN)</li>
+
+            Στόχος της εταιρίας είναι να παρέχει στους πελάτες της ολοκληρωμένες λύσεις, από την μελέτη της επένδυσης μέχρι την ολοκλήρωση και την υποστήριξη.</p>
+            
+            <hr class="">
+             <h4 class=""><a href="/" class="">Eνα λινκ που ισως χρειαστει</a></h4>
+
+            <hr class="">
+        </div>
+
+        <%= render 'deksia_mprara' %>
+    </div>
+    <!--/row-->
+    
+</div>
+
+
+
+

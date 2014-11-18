@@ -1,0 +1,138 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Αναλώσημα" ,home_analosima_path %></li>
+        <li class="active"><%= link_to "Αναλώσημα λιπαντικά" ,home_analosima_lipantika_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+	<div class="container-fluid">
+	    <div class="row">
+	        <!--Αρχή αριστερής λίστας που κατεβαίνει-->
+	        <div class="col-md-3 col-xs-0" id="leftCol">
+	            <ul class="nav nav-stacked" id="sidebar">
+                <li><a href="analosima_router" class="frezarisma"><span class="glyphicon glyphicon-wrench"></span> Router bits/Milling cutters</a>
+                  </li>
+	                <li><a href="#93000" class="lipantika"><span class="glyphicon glyphicon-wrench"></span> Λιπαντικά-ψυκτικά υγρά<span class="badge pull-right"><%= @analosima.count %></span></a>
+                    <ol id="mesa_lista_mixanimata" class="nav">
+                          <li><a href="#93000" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για παντογράφους φρέζες νεροχύτη,πριόνια κοπής μετάλλων </a></li>
+                          <li><a href="#93001" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για πριόνια κοπής μετάλλων</a></li>
+                          <li><a href="#93010" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικο υγρό για χρήση σε πριόνια με σύστημα ψεκασμού-νέφωσης </a></li>
+                      </ol>
+	                </li>
+	                <li><a href="#sec0" class="2"><span class="glyphicon glyphicon-wrench"></span> Ευκαιρίες</a>
+	                </li>
+	                <li><a href="#panw" class="3"><span class="glyphicon glyphicon-chevron-up"></span> Επάνω</a>
+	                </li>
+	            </ul>
+
+	        </div>
+
+          
+
+	        <!--right PARTIALLLLLLLL-->
+            <div class="col-md-6">
+              <% if (!@analosima.nil?) %>
+            <% @analosima.each do |a| %>
+             <h2 id="<%= a.wgr %>" class="123">Αναλώσημα</br>
+             <small><%= a.text %></small></h2>
+             <%= image_tag(a.image, size: '200') %></br></br>
+             
+            <h3>Τιμή: <%= a.price %>€</h3>
+            <% if user_signed_in? %>
+            <button type="button" class="btn btn-primary order" id="<%= a.artikel %>" data-toggle="modal" data-target="#<%=a.id%>">Προσθέστε στο καλάθι</button>
+            <% end %>
+            <hr class="">
+
+            <!-- Modal -->
+                    <div class="modal fade" id="<%=a.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close mesi" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Το προιόν προστέθηκε στο καλάθι σας</h4>
+                          </div>
+                          <div class="modal-body">
+                            <h3><%= a.text %></h3>
+                            <%= image_tag(a.image, size: "200") %></br></br>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default panw" data-dismiss="modal">Συναίχεια Αγορών</button>
+                            <%= link_to "Καλάθι Αγορών" ,home_kalathi_path , class: "btn btn-primary katw"%><!--CHECKOUT-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            <% end %> <!--end tou each-->
+            <% end %> <!--end tou if-->
+
+            
+            <hr class="">
+             <h4 class=""><a href="/" class="">Eνα λινκ που ισως χρειαστει</a></h4>
+
+            <hr class="">
+        </div>
+
+        <%= render 'deksia_mprara' %>
+    </div>
+    <!--/row-->
+</div>
+
+<script>
+  //Μαλλον θα βαλω μετριτες για δευτερη φορα και τετεια!!
+  $(".mesa_lipantika").show();
+  $(".frezarisma_HSS").hide();
+  $(".frezarisma_VHM").hide();
+  $(".mesa_frezarisma_HSS").hide();
+  $(".mesa_frezarisma_VHM").hide();
+
+  //Γινεται πολυ ευκολα με toggle αλλα και ετσι ειναι
+  $(document).ready(function(){
+  $(".lipantika").click(function(){
+    $(".mesa_lipantika").show(); //Δεν θέλουμε ξαναπαντοντας να κρηβετε!!
+    $(".mesa_frezarisma").hide();
+          
+        
+  });
+  $(".order").click(function(){
+    alert( $(this).attr('id') );
+    $.ajax({
+          type:'POST',
+          url:'/home/card',
+          dataType: "json",
+          data: { artikel: $(this).attr('id') },
+          success: function(data) { 
+            },
+          error: function(data) { 
+            }
+        });      
+    $(".panw").click(function(){ //Reload την σελιδα για να βγουν στο πινακακι δεξια
+      location.reload();
+    });
+    $(".mesi").click(function(){ //Reload την σελιδα για να βγουν στο πινακακι δεξια
+      location.reload();
+    });
+    
+  });
+
+
+  $(".frezarisma").click(function(){
+    $(".mesa_frezarisma").show();
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".2").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".3").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+
+
+});
+
+</script>

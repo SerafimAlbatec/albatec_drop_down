@@ -1,0 +1,43 @@
+<h1>ΠΑΡΑΓΓΕΛΙΑ!!!</h1>
+
+Επωνυμία εταιρίας: <%= @eponimia%> <br>
+Δραστηριότητα:  <%= @drastiriotita%> <br> 
+ΑΦΜ:  <%= @afm%> <br>
+Δ.Ο.Υ:  <%= @dou%> <br>
+Διευθ. ΕΔΡΑΣ:  <%= @edra%> <br>
+Τηλέφωνο:  <%= @tilefwno%> <br>
+ΦΑΞ:  <%= @faks%> <br>
+Email:  <%= @email%> <br>
+Όνομα υπευθύνου:  <%= @onoma%> <br>
+Μήνυμα:  <%= @mnm%> <br> 
+
+<thead>
+	            <tr class='info'>
+	              <th id="kartoula_head">Οικόνα</th>
+	              <th id="kartoula_head">Περιγραφή</th> 
+	              <th id="kartoula_head">Artikel</th>
+	              <th id="kartoula_head">Ποσότιτα</th> 
+	              <th id="kartoula_head">Τιμή</th>  
+	              <th></th>
+	            </tr>
+	          </thead>
+
+	          <tbody>
+	            <% if (!@card.nil?) %>
+	            <% @card.each do |order| %>
+	              <tr class="root">
+	                <td><%= image_tag(order.image, size: "50") %></td> <!-- pernaw to poll.id sto question index -->
+	                <td><%= order.text%></td>
+	                <td><%= order.artikel%></td>
+	                <td id="price" class="price"><h2><%= order.price%></h2></td>
+	              </tr>
+	            <% end %>
+	            <% end %>
+	          </tbody>
+	        </table>
+
+	        <label id="sunolo">Συνολο παραγγελίας: </label><label id="timi_sunolou"><h2><%= @sunolo %></h2></label></br>
+
+<br>
+<br>
+link gia to site <%= link_to @url, @url %>

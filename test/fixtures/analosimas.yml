@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artikel: MyString
+  wgr: 1
+  text: MyString
+  pl22: 1.5
+  price: 1.5
+  image: MyString
+
+two:
+  artikel: MyString
+  wgr: 1
+  text: MyString
+  pl22: 1.5
+  price: 1.5
+  image: MyString

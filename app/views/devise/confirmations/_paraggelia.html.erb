@@ -1,0 +1,103 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container">
+  
+      <ol class="breadcrumb">
+        <label class="active">Ολοκλήρωση παραγγελίας</label>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-xs-3" id="leftCol">
+		</div>
+		<div class="col-md-6 col-xs-6">
+			<form role="form">
+				  <div class="form-group">
+				    <label for="eponimia">Επωνυμία εταιρίας</label>
+				    <input type="text" class="form-control" id="eponimia" placeholder="Επωνιμία εταιρίας">
+				  </div>
+				  <div class="form-group">
+				    <label for=" drastiriotita">Δραστηριότητα</label>
+				    <input type=" text" class="form-control" id="drastiriotita" placeholder="Δραστηριότητα">
+				  </div>
+				  <div class="form-group">
+				    <label for=" afm">ΑΦΜ</label>
+				    <input type="text" class="form-control" id="afm" placeholder="ΑΦΜ">
+				  </div>
+				  <div class="form-group">
+				    <label for=" doy">Δ.Ο.Υ</label>
+				    <input type="text" class="form-control" id="doy" placeholder="Δ.Ο.Υ">
+				  </div>
+				  <div class="form-group">
+				    <label for="edra">Διευθ. ΕΔΡΑΣ</label>
+				    <input type="text" class="form-control" id="edra" placeholder="Διευθ. ΕΔΡΑΣ">
+				  </div>
+				  <div class="form-group">
+				    <label for="tilefono">Τηλέφωνο</label>
+				    <input type="text" class="form-control" id="tilefono" placeholder="Τηλέφωνο">
+				  </div>
+				  <div class="form-group">
+				    <label for="faks">ΦΑΞ</label>
+				    <input type="text" class="form-control" id="faks" placeholder="ΦΑΞ">
+				  </div>
+				  <div class="form-group">
+				    <label for="email">Email</label>
+				    <input type="email" class="form-control" id="email" placeholder="E-mail">
+				  </div>
+				  <div class="form-group">
+				    <label for="onoma">Όνομα υπευθύνου</label>
+				    <input type="text" class="form-control" id="onoma" placeholder="Όνομα υπευθύνου">
+				  </div>
+				  <div class="form-group">
+				    <label for="koimeno">Μήνυμα</label>
+				    <textarea rows="7" cols="50" type="text" class="form-control" id="koimeno" placeholder="Μήνυμα"></textarea>
+				  </div>
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox"> Check me out
+				    </label>
+				  </div>
+				  <button class="btn btn-success" id="upovoli">Ολοκλήρωση παραγγελίας</button>
+				</form>
+		</div>
+	</div>
+</div>
+
+<script>
+    
+  //Γινεται πολυ ευκολα με toggle αλλα και ετσι ειναι
+  $(document).ready(function(){
+
+  	
+
+  $("#upovoli").click(function(){
+  	var eponimia = $('#eponimia').val();
+    var drastiriotita = $('#drastiriotita').val();
+    var afm = $('#afm').val();
+    var doy = $('#doy').val();
+    var edra = $('#edra').val();
+    var tilefono = $('#tilefono').val();
+    var faks = $('#faks').val();
+    var email = $('#email').val();
+    var onoma = $('#onoma').val();
+    var koimeno = $('#koimeno').val();
+          $.ajax({
+          type:'POST',
+          url:'/home/paraggelia_send',
+          dataType: "json",
+          data: { eponimia: eponimia, drastiriotita: drastiriotita, afm: afm, doy: doy, edra: edra, tilefono: tilefono, faks: faks, email: email, onoma: onoma, koimeno: koimeno },
+          success: function(data) { 
+            },
+          error: function(data) { 
+            }
+        });
+      });
+
+
+
+});
+
+
+</script>

@@ -1,0 +1,102 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "faq" ,home_faq_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3" id="leftCol">
+		</div>
+		<div class="col-md-6">
+			<div class="panel-group" id="accordion">
+			  <div class="panel panel-default" id="panel1">
+			    <div class="panel-heading col_1">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="col_1">
+			          Collapsible Group Item #1
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseOne" class="panel-collapse collapse in">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default" id="panel2">
+			    <div class="panel-heading col_2">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="col_2">
+			          Collapsible Group Item #2
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default" id="panel3">
+			    <div class="panel-heading col_3">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="col_3">
+			          Collapsible Group Item #3
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseThree" class="panel-collapse collapse">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+$('#collapseOne').hide();
+$('#collapseTwo').hide();
+$('#collapseThree').hide();
+
+$(".col_1").click(function(){
+	$('#collapseOne').toggle(1000);
+    $('#collapseTwo').hide(500);
+    $('#collapseThree').hide(500);
+  
+});
+
+$(".col_2").click(function(){
+	$('#collapseOne').hide(500);
+    $('#collapseTwo').toggle(1000);
+    $('#collapseThree').hide(500);
+  
+});
+
+$(".col_3").click(function(){
+	$('#collapseOne').hide(500);
+    $('#collapseTwo').hide(500);
+    $('#collapseThree').toggle(1000);
+  
+});
+
+
+
+});
+
+
+
+</script>

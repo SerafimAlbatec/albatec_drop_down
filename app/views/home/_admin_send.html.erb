@@ -1,0 +1,79 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Admin_panel" ,home_admin_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3" id="leftCol">
+		</div>
+		<div class="col-md-6">
+
+			<%= form_for @analosimo, url: {action: "admin_send"}, html: {:multipart => true} do |f| %>
+			  <% if @analosimo.errors.any? %>
+			    <div id="error_explanation">
+
+			      <ul>
+			      <% @analosimo.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			        <li><%= flash[:danger] = message %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
+			  <div class="form-group">
+			    <%= f.label :artikel %><br>
+			    <%= f.text_field :artikel, :class => "form-control" %>
+			  </div>
+
+			  <div class="form-group">
+			    <%= f.label :wgr %><br>
+			    <%= f.text_field :wgr, :class => "form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.label :text %><br>
+			    <%= f.text_field :text, :class => "form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.label :price %><br>
+			    <%= f.text_field :price, :class => "form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.label :image %><br>
+			    <%= f.file_field :image %>
+			  </div>
+
+			  <div class="actions">
+			    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+			    <i class="icon-ok icon-white"></i> Save
+			    <% end %>
+			  </div>
+			<% end %>
+            
+           <hr>
+<%
+=begin %>
+             <%= link_to "Download_csv", home_export_path(:format => "csv") ,class: "btn btn-primary", :target => "_blank" %> </br> </br>
+           <hr>
+<% 
+=end %>
+             <%= link_to "Download_xls", home_export_path(:format => "xls") ,class: "btn btn-primary", :target => "_blank" %> </br> </br>
+           <hr>
+
+           <%= form_tag home_import_path ,multipart: true do %>
+             <%= file_field_tag :file %>
+             <%= submit_tag "import" %>
+           <% end -%>
+          
+              
+		</div>
+
+	</div>
+
+</div> 

@@ -1,0 +1,204 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <label class="active">Ολοκλήρωση παραγγελίας</label>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3" id="leftCol">
+		</div>
+		<div class="col-md-6">
+
+            <%= link_to "Παρακαλούμε, αν θέλετε, εκτυπώστε την παραγγελλια σας πριν την υποβάλεται", home_pdf_path(:format => "pdf") ,class: "btn btn-primary", :target => "_blank" %> </br> </br>
+
+
+			<form role="form" class="paraggelia_form">
+				  <div class="form-group">
+				    <label for="eponimia">Επωνυμία εταιρίας</label>
+				    <input type="text" class="form-control" id="eponimia" placeholder="Επωνιμία εταιρίας" name="eponimia">
+				  </div>
+				  <div class="form-group">
+				    <label for="drastiriotita">Δραστηριότητα</label>
+				    <input type=" text" class="form-control" id="drastiriotita" placeholder="Δραστηριότητα" name="drastiriotita">
+				  </div>
+				  <div class="form-group">
+				    <label for="afm">ΑΦΜ</label>
+				    <input type="text" class="form-control" id="afm" placeholder="ΑΦΜ" name="afm">
+				  </div>
+				  <div class="form-group">
+				    <label for="doy">Δ.Ο.Υ</label>
+				    <input type="text" class="form-control" id="doy" placeholder="Δ.Ο.Υ" name="doy">
+				  </div>
+				  <div class="form-group">
+				    <label for="edra">Διευθ. ΕΔΡΑΣ</label>
+				    <input type="text" class="form-control" id="edra" placeholder="Διευθ. ΕΔΡΑΣ" name="edra">
+				  </div>
+				  <div class="form-group">
+				    <label for="tilefono">Τηλέφωνο</label>
+				    <input type="text" class="form-control" id="tilefono" placeholder="Τηλέφωνο" name="tilefono">
+				  </div>
+				  <div class="form-group">
+				    <label for="faks">ΦΑΞ</label>
+				    <input type="text" class="form-control" id="faks" placeholder="ΦΑΞ" name="faks">
+				  </div>
+				  <div class="form-group">
+				    <label for="onoma">Όνομα υπευθύνου</label>
+				    <input type="text" class="form-control" id="onoma" placeholder="Όνομα υπευθύνου" name="onoma">
+				  </div>
+				  <div class="form-group">
+				    <label for="koimeno">Μήνυμα</label>
+				    <textarea rows="7" cols="50" type="text" class="form-control" id="koimeno" placeholder="Μήνυμα" name="koimeno"></textarea>
+				  </div>
+				  
+				  <div class="alert alert-success alert-dismissible" role="alert" id="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>Επιτυχής ολοκλήρωση παραγγελίας</strong> Δείτε στο email σας τις λεπτομεριες<a href="mailto:<%=current_user.email %>" class="alert-link"><%= current_user.email %></a>
+				</div>
+				  <button class="btn btn-success" id="loading-example-btn"><span class="glyphicon glyphicon-ok"></span>  Ολοκλήρωση παραγγελίας</button>
+
+				</form>
+		</div>
+	</div>
+</div>
+
+<script>
+    
+  //Γινεται πολυ ευκολα με toggle αλλα και ετσι ειναι
+  $(document).ready(function(){
+
+  $("#alert").hide();
+  $("#loading-example-btn").show();
+
+  $('.paraggelia_form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            eponimia: {
+                message: 'Το πεδίο επωνιμία είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο επωνιμία είναι απαραίτητο'
+                    }//,
+                    //regexp: {
+                    //    regexp: /^[a-zA-Z0-9_]+$/,
+                    //    message: 'The username can only consist of alphabetical, number and underscore'
+                    //}
+                }
+            },
+            drastiriotita: {
+                message: 'Το πεδίο δραστηριότητα είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο δραστηριότητα είναι απαραίτητο'
+                    }//,
+                    //regexp: {
+                    //    regexp: /^[a-zA-Z0-9_]+$/,
+                    //    message: 'The username can only consist of alphabetical, number and underscore'
+                    //}
+                }
+            },
+            afm: {
+                message: 'Το πεδίο ΑΦΜ είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο θέμα είναι απαραίτητο'
+                    },
+                    stringLength: {
+                        min: 9,
+                        max: 9,
+                        message: 'Το πεδίο ΑΦΜ πρέπει να εχεί 9 στοιχεία'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'Το πεδίο ΑΦΜ πρέπει να αποτελείται μονο απο αριθμους'
+                    }
+                }
+            },
+            doy: {
+                message: 'Το πεδίο ΔΟΥ είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο ΔΟΥ είναι απαραίτητο'
+                    }
+                }
+            },
+            edra: {
+                message: 'Το πεδίο έδρα είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο έδρα είναι απαραίτητο'
+                    }
+                }
+            },
+            tilefono: {
+                message: 'Το πεδίο τηλέφωνο είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο τηλέφωνο είναι απαραίτητο'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'Το πεδίο τηλέφωνο πρέπει να αποτελείται μονο απο αριθμους'
+                    }
+                }
+            },
+            faks: {
+                message: 'Το πεδίο ΦΑΞ δεν είναι απαραίτητο',
+                validators: {
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'Το πεδίο ΦΑΞ πρέπει να αποτελείται μονο απο αριθμους'
+                    }
+                }
+            },
+            onoma: {
+                message: 'Το πεδίο όνομα είναι απαραίτητο',
+                validators: {
+                    notEmpty: {
+                        message: 'Το πεδίο όνομα είναι απαραίτητο'
+                    }
+                }
+            }
+        } //end fields
+    }); //end val
+
+    $('.paraggelia_form').on('success.form.bv', function(e) {
+    	var eponimia = $('#eponimia').val();
+	    var drastiriotita = $('#drastiriotita').val();
+	    var afm = $('#afm').val();
+	    var doy = $('#doy').val();
+	    var edra = $('#edra').val();
+	    var tilefono = $('#tilefono').val();
+	    var faks = $('#faks').val();
+	    var email = $('#email').val();
+	    var onoma = $('#onoma').val();
+	    var koimeno = $('#koimeno').val();
+	    $("#loading-example-btn").hide();
+	    $("#alert").show();
+          $.ajax({
+          type:'POST',
+          url:'/home/paraggelia_send',
+          dataType: "json",
+          data: { eponimia: eponimia, drastiriotita: drastiriotita, afm: afm, doy: doy, edra: edra, tilefono: tilefono, faks: faks, email: email, onoma: onoma, koimeno: koimeno },
+          success: function(data) { 
+            },
+          error: function(data) { 
+            }
+    	}); //end ajax
+    }); //end submit
+  	
+
+
+});
+
+
+</script>

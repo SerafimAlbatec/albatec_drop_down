@@ -1,0 +1,114 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Αναλώσημα" ,home_analosima_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+	<div class="container-fluid">
+	    <div class="row">
+	        <!--Αρχή αριστερής λίστας που κατεβαίνει-->
+	        <div class="col-md-3 col-xs-0" id="leftCol">
+	            <ul class="nav nav-stacked" id="sidebar">
+                <li><a href="analosima_router" class="frezarisma"><span class="glyphicon glyphicon-wrench"></span> Router bits/Milling cutters<span class="badge pull-right">5</span></a>
+                      <ol id="mesa_lista_mixanimata" class="nav">
+                          <li><a href="#sec1_1" class="mesa_frezarisma"><span class="glyphicon glyphicon-asterisk"></span>Διπλό δισκοπρίονο κοπής προφίλ αλουμινίου EMMEGI Radial Libra</a></li>
+                          <li><a href="#sec1_2" class="mesa_frezarisma"><span class="glyphicon glyphicon-asterisk"></span>Πάγκος Μονταρίσματος μηχανισμού Ruchser</a></li>
+                          <li><a href="#sec1_3" class="mesa_frezarisma"><span class="glyphicon glyphicon-asterisk"></span>Συσκευαστικό κουφωμάτων Rotoplat</a></li>
+                          <li><a href="#sec1_4" class="mesa_frezarisma"><span class="glyphicon glyphicon-asterisk"></span>Φρέζα ξελουρίσματος -Τ- Αλουμινίου&PVC AF221-00 elumatec</a></li>
+                          <li><a href="#sec1_5" class="mesa_frezarisma"><span class="glyphicon glyphicon-asterisk"></span>Εργαλείο καθαρισμού προφίλ PVC ROTOX HAG128</a></li>
+                      </ol>
+                  </li>
+	                <li><a href="analosima_lipantika" class="lipantika"><span class="glyphicon glyphicon-wrench"></span> Λιπαντικά-ψυκτικά υγρά</a>
+                    <ol id="mesa_lista_mixanimata" class="nav">
+                          <li><a href="#93000" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για παντογράφους φρέζες νεροχύτη,πριόνια κοπής μετάλλων </a></li>
+                          <li><a href="#93001" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για πριόνια κοπής μετάλλων</a></li>
+                          <li><a href="#93010" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικο υγρό για χρήση σε πριόνια με σύστημα ψεκασμού-νέφωσης </a></li>
+                      </ol>
+	                </li>
+	                <li><a href="#sec0" class="2"><span class="glyphicon glyphicon-wrench"></span> Ευκαιρίες</a>
+	                </li>
+	                <li><a href="#panw" class="3"><span class="glyphicon glyphicon-chevron-up"></span> Επάνω</a>
+	                </li>
+	            </ul>
+
+	        </div>
+
+          
+
+	        <!--right PARTIALLLLLLLL-->
+            <div class="col-md-6">
+              <% if (!@analosima.nil?) %>
+            <% @analosima.each do |a| %>
+             <h2 id="<%= a.wgr %>" class="123">Αναλώσημα</br>
+             <small><%= a.text %></small></h2>
+             <%= image_tag(a.image, size: '200') %></br></br>
+             
+            </br>
+            <p>Η εταιρία AFS Federhenn Maschinen GmbH είναι κατασκευαστής μηχανημάτων παραγωγής κουφωμάτων. Με εμπειρία 40 χρόνων, η εταιρία διαθέτει στην παγκόσμια αγορά ποιοτικά μηχανήματα υψηλής τεχνολογίας και αξιοπιστίας. Πάγκοι μονταρίσματος απλοί ή αυτόματοποιημένοι, κέντρα κοπής και κατεργασίας, συστήματα οργάνωσης παραγωγής και ειδικές κατασκευές για την γρήγορη και εύκολη μεταφορά των κουφωμάτων μεταξύ των διαφόρων σταδίων παραγωγής. Σε συνεργασία με την γνωστή εταιρία Hollinger Maschinen GmbH προσφέρει επίσης μηχανές συγκόλλησης και καθαρίσματος προφίλ PVC.</br>
+            <a href="http://afs-federhenn.de/site_e/index.html" class="" target="_blank"> AFS-Federhenn</a>
+            </p>
+
+            <hr class="">
+            <% end %> <!--end tou each-->
+            <% end %> <!--end tou if-->
+
+            <hr class="">
+             <h4 class=""><a href="/" class="">Eνα λινκ που ισως χρειαστει</a></h4>
+
+            <hr class="">
+        </div>
+
+        <%= render 'deksia_mprara' %>
+    </div>
+    <!--/row-->
+</div>
+
+<script>
+  //Αλαζω το script σε γενικο και αλλαζω το καθε script σε καθε σελιδα οσες ειναι αυτες!!
+  //Στην ουσια κανο μονο ajax σε ολα και show hide μονο σε καθε view μετα ξεχοριστα!!
+  $(".mesa_lipantika").hide();
+  $(".mesa_frezarisma").hide();
+
+  //Γινεται πολυ ευκολα με toggle αλλα και ετσι ειναι
+  $(document).ready(function(){
+  $(".lipantika").click(function(){
+    $(".mesa_lipantika").show(); //Δεν θέλουμε ξαναπαντοντας να κρηβετε!!
+    $(".mesa_frezarisma").hide();
+          $.ajax({
+          type:'GET',
+          url:'/home/analosima_lipantika',
+          success: function(data) { 
+            
+        },
+        error: function(data) { 
+            alert('Failed!');
+            alert(JSON.stringify(data));
+        }
+
+       
+        
+        });
+        
+  });
+
+  $(".frezarisma").click(function(){
+    $(".mesa_frezarisma").show();
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".2").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".3").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+
+
+});
+
+</script>

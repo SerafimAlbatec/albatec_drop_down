@@ -1,0 +1,50 @@
+<div class="col-md-3 col-xs-3" id="rightCol">
+          
+                
+        <div class="well"> 
+                <ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="#sec1">Section 1</a></li>
+                  <li><a href="#sec2">Section 2</a></li>
+                  <li><a href="#sec3">Section 3</a></li>
+                  <li><a href="#sec4">Section 4</a></li>
+                </ul>
+        </div>
+
+        
+
+        <!-- Table -->
+          
+          <table class="table table-hover kartoula">
+
+          <thead>
+            <tr class='info'>
+              <th id="kartoula_head"></th> 
+              <th id="kartoula_head">Περιγραφή</th>
+              <th id="kartoula_head">Ποσότητα</th> 
+              <th id="kartoula_head">Τιμή</th> 
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @items = Card.all %> <!--Tou user me where kai meta tha svinontai opws sto railcast-->
+            <% if (!@items.nil?) %>
+            <% @items.each do |item| %>
+              <tr>
+                <td id="kartoula_body1"><%= image_tag(item.image, size: "50") %></td>
+                <td id="kartoula_body1"><%= item.text%></td> 
+                <td id="kartoula_body2"><%= item.amount%></td>
+                <td id="kartoula_body2"><%= item.price%></td>
+              </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+
+        <hr class="">
+        <%= link_to "Μετάβαση στο καλάθι" ,home_kalathi_path , class: "btn btn-primary"%>
+        
+
+          
+            
+</div>
+

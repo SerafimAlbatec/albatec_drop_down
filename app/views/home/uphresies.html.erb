@@ -1,0 +1,45 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw"class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Υπηρεσίες" ,home_uphresies_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container-fluid">
+    <div class="row">
+        <!--Αρχή αριστερής λίστας που κατεβαίνει-->
+        <div class="col-md-3 col-xs-0" id="leftCol">
+            <ul class="nav nav-stacked" id="sidebar">
+                <li><a href="#sec0" class=""><span class="glyphicon glyphicon-text-height"></span> Τεχνικές μεταφράσεις</a>
+                </li>
+            </ul>
+
+        </div>
+        <!--/left-->
+        <!--right-->
+        <div class="col-md-6">
+             <h2 id="sec0" class="">Yπηρεσίες</br><small>Τεχνικές μεταφράσεις</small></h2>
+
+             <div class="row">
+                <div class="col-md-4">
+                    <%= image_tag("uphresies_logo.jpg") %>
+                </div>
+            </div>
+            </br>
+            <p class="">Είμαστε σε θέση να προσφέρουμε υψηλής ποιότητας και αξιοπιστίας τεχνικές μεταφράσεις καταλόγων , ιστοσελίδων και διαφημιστικών εντύπων για την προβολή της εταιρίας σας σε αγορές του εξωτερικού.
+            Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες.</p>
+
+            <hr class="">
+             <h4 class=""><a href="/" class="">Eνα λινκ που ισως χρειαστει</a></h4>
+
+            <hr class="">
+        </div>
+
+        <%= render 'deksia_mprara' %>
+    </div>
+    <!--/row-->
+    
+</div>

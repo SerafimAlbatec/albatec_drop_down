@@ -1,0 +1,104 @@
+.nav > li > a:hover, .nav > li > a:focus{
+	text-decoration: underline;
+}
+
+.affix-top > li > a {
+position: relative;
+display: block;
+padding: 4px 15px;
+}
+
+.affix > li > a {
+	position: relative;
+	display: block;
+	padding: 2px 15px;
+}
+
+.affix-top > li > ol > li > a {
+padding: 1px 15px;
+}
+
+.affix > li > ol > li > a {
+padding: 1px 15px;
+}
+
+
+.mesa_lipantika {
+	margin-left: 30px;
+	font-weight: 500;
+	font-size: 90%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.frezarisma_HSS {
+	margin-left: 30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 1px 15px;
+}
+
+.frezarisma_VHM {
+	margin-left: 30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 1px 15px;
+}
+
+.mesa_frezarisma_HSS {
+	margin-left: 60px;
+	font-weight: 500;
+	font-size: 90%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.mesa_frezarisma_VHM {
+	margin-left: 60px;
+	font-weight: 500;
+	font-size: 90%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.frezarisma_ipok > li > a {
+	padding: 1px 15px;
+} 
+
+.frezarisma_ipok > li > ol > li > a {
+	padding: 1px 15px;
+} 
+
+/* Δεξια button για επάνω */
+.home_right {
+	position: fixed;
+	bottom: 0px;
+    right: 0px;
+	z-index: 100;
+}
+
+.btn-primary {
+	background-color: transparent;
+	border-color: transparent;
+	color: black;
+}
+
+.btn {
+  border: 1px solid;
+  border-color: black;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  color: white;
+  background-color: black;
+  border-color: white;
+}
+
+.home_right a:hover {
+  transform: scale(1.2);
+}
+
+.home_right a {
+  transition: all 0.3s ease 0s;
+  width: 100%;
+}

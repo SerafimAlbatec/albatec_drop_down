@@ -1,0 +1,64 @@
+<%= link_to image_tag(@image_logo_albatec.name, size: '150'), {:class => 'img-responsive'}, {:id => 'panw'} %>
+ 
+ <!-- MPARA EPANW -->
+  <nav class="navbar navbar-default nav_style" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Albatec</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="/"><span class="glyphicon glyphicon-home"></span> Εταιρία</a></li>
+        <li><a href="/home/mixanimata"><span class="glyphicon glyphicon-wrench"></span> Μηχανήματα</a></li>
+        <li><a href="/home/analosima_router"><span class="glyphicon glyphicon-wrench"></span> Αναλώσημα</a></li>
+        <li><a href="/home/software"><span class="glyphicon glyphicon-off"></span> Software</a></li>
+        <li><a href="/home/uphresies"><span class="glyphicon glyphicon-text-height"></span> Υπηρεσίες</a></li>
+        <li><a href="/home/epikoinonia"><span class="glyphicon glyphicon-phone-alt"></span> Επικοινωνία</a></li>
+        <li><a href="/home/faq"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a></li>
+        <%
+=begin %>
+        <li>
+          <%= form_tag home_analosima_lipantika_path, :method => 'get', html: {class: "navbar-form navbar-left"} do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Search" %>
+        </div>
+      </li>
+      <li>
+        <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+          <i class="icon-search"></i> Search
+          <% end %>
+          <% end %>
+      </li>
+      <% 
+=end %>
+      </ul>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <% if current_user.email == "serafimntavranis@hotmail.com" %> <!--Mesa giati vgazei error-->
+          <li><a href="/home/admin">Admin panel</a>
+        <% end %>
+        <li><a href="/home/kalathi"><span class="glyphicon glyphicon-shopping-cart"></span> Καλάθι Αγορών</a></li>
+        <% end %>
+        <!--USER SIGN IN SIGN UP-->
+        <% if user_signed_in? %> 
+        <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- MPARA EPANW -->

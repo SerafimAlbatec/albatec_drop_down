@@ -1,0 +1,82 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Καλάθι Αγορών" ,home_kalathi_path %></li>
+      </ol>
+   
+</div>
+<!-- Telos breadcrumb-->
+
+<div class="container-fluid">
+	
+			  <h1>Καλαθι Αγορών</h1>
+			  <div class="table-responsive">
+              <table class="table table-hover">
+
+	          <thead>
+	            <tr class='info'>
+	              <th id="kartoula_head">Οικόνα</th>
+	              <th id="kartoula_head">Περιγραφή</th> 
+	              <th id="kartoula_head">Artikel</th>
+	              <th id="kartoula_head">Ποσότιτα</th> 
+	              <th id="kartoula_head">Τιμή</th>  
+	              <th></th>
+	            </tr>
+	          </thead>
+
+	          <tbody>
+	            <% if (!@order.nil?) %>
+	            <% @order.each do |order| %>
+	              <tr class="root">
+	                <td><%= image_tag(order.image, size: "50") %></td> <!-- pernaw to poll.id sto question index -->
+	                <td><%= order.text%></td>
+	                <td><%= order.artikel%></td>
+	                <td><input class="input" type="text" name="lname" size="5" placeholder="<%= order.amount%>" id="<%= order.artikel %>"></td>
+	                <td id="price" class="price"><%= order.price%></td>
+	                <td><%= link_to 'Destroy', home_destroy_path(:id => order.id), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-xs'%></td>
+	              </tr>
+	            <% end %>
+	            <% end %>
+	          </tbody>
+	        </table>
+	    </div>
+
+            <label id="sunolo">Συνολο παραγγελίας: </label><label id="timi_sunolou"><%= @sunolo %></label></br>
+            <% if (@number > 0) %>
+            <button type="button" class="btn btn-default update">Update</button>
+            <%= link_to "Ολοκλήρωση παραγγελίας" ,home_paraggelia_path , class: "btn btn-primary oloklirwsi"%><!--CHECKOUT-->
+            <% end %>
+
+        
+
+</div>
+
+
+
+<script>
+
+$(document).ready(function(){
+
+	$(".update").click(function(){
+		$("input").each(function(){ //Για καθε input κανω τo update
+			if ( $(this).val().length ) { //ελεγχω αν εχει αλλαξει το value και δεν υπαρχει μονο placeholder
+		    $.ajax({
+	          type:'PUT',
+	          url:'/home/update',
+	          dataType: "json",
+	          data: { amount: $(this).val(), artikel: $(this).attr('id')},
+	          success: function(data) { 
+	            },
+	          error: function(data) { 
+	            }
+	        }); //ajax end
+	        } //end if
+		 }); //each end
+		location.reload();
+	});//update end
+}); //ready end
+
+
+
+</script>

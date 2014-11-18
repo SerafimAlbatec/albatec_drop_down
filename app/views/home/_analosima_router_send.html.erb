@@ -1,0 +1,208 @@
+<!-- Kathe fora poy eimaste se kathe selida tha mpainei auto panw me ta antistixa pedia stin seira-->
+<div id="epanw" class="container-fluid">
+  
+      <ol class="breadcrumb">
+        <li class="active"><%= link_to "Αναλώσημα" ,home_analosima_path %></li>
+        <li class="active"><%= link_to "Αναλώσημα Router" ,home_analosima_router_path %></li>
+      </ol>
+   
+<!-- Telos breadcrumb-->
+
+</div>
+	<div class="container-fluid">
+	    <div class="row">
+	        <!--Αρχή αριστερής λίστας που κατεβαίνει-->
+	        <div class="col-md-3 col-xs-0" id="leftCol">
+	            <ul class="nav nav-stacked" id="sidebar">
+                <!--Πανω μεγαλη κλαση-->
+                <li><a href="#91000" class="frezarisma"><span class="glyphicon glyphicon-wrench"></span> Router bits/Milling cutters<span class="badge pull-right"><%= @analosima_router.count %></span></a>
+                      <ol id="mesa_lista_frezarisma" class="nav">
+                        <ul class="nav nav-stacked frezarisma_ipok" id="sidebar">
+                          <!--Υποκλαση HSS-->
+                          <li><a href="#91000" class="frezarisma_HSS"><span class="glyphicon glyphicon-wrench"></span> Router bits/Milling HSS</a>
+                            <ol id="" class="nav">
+                              <li><a href="#91000" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91001" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E -Hals-</a></li>
+                              <li><a href="#91003" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91004" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91005" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91010" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Wsserschlitzfraser HSS-E</a></li>
+                              <li><a href="#91011" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Wsserschlitzfraser HSS-E</a></li>
+                              <li><a href="#91012" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Bohrnutenfraser HSS-E</a></li>
+                              <li><a href="#91021" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Wsserschlitzfraser HSS-E</a></li>
+                              <li><a href="#91022" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91023" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Einzahnfraser HSS-E</a></li>
+                              <li><a href="#91025" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Bohrnutenfraser HSS-E</a></li>
+                              <li><a href="#91026" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Bohrnutenfraser HSS-E</a></li>
+                              <li><a href="#91027" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Schlosskastenfraser HSS-E</a></li>
+                              <li><a href="#91029" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Frasbohrer HSS elumatec</a></li>
+                              <li><a href="#91030" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Schaftfraser HSS</a></li>
+                              <li><a href="#91031" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Stufenfraser HSS-E</a></li>
+                              <li><a href="#91032" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Innenfalz HSS</a></li>
+                              <li><a href="#91033" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Bohrnutenfraser HSS-E</a></li>
+                              <li><a href="#91034" class="mesa_frezarisma_HSS"><span class="glyphicon glyphicon-asterisk"></span>Nuttfraser HSS</a></li>
+                            </ol>
+                          <!--Υποκλαση VHM-->
+                          <li><a href="#91100" class="frezarisma_VHM"><span class="glyphicon glyphicon-wrench"></span> Router bits/Milling VHM</a>
+                            <ol id="" class="nav">
+                              <li><a href="#91024" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91100" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91101" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91102" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91103" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91105" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91106" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91120" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91121" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91122" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91123" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91124" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91125" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91126" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91131" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91140" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                              <li><a href="#91141" class="mesa_frezarisma_VHM"><span class="glyphicon glyphicon-asterisk"></span>Doppelfraser VHM</a></li>
+                            </ol>
+                        </ul>
+                      </ol>
+                  </li>
+	                <li><a href="analosima_lipantika" class="lipantika"><span class="glyphicon glyphicon-wrench"></span> Λιπαντικά-ψυκτικά υγρά</a>
+                    <ol id="mesa_lista_mixanimata" class="nav">
+                          <li><a href="#93000" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για παντογράφους φρέζες νεροχύτη,πριόνια κοπής μετάλλων </a></li>
+                          <li><a href="#93001" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικό υγρό για πριόνια κοπής μετάλλων</a></li>
+                          <li><a href="#93010" class="mesa_lipantika"><span class="glyphicon glyphicon-asterisk"></span>Ψυκτικο υγρό για χρήση σε πριόνια με σύστημα ψεκασμού-νέφωσης </a></li>
+                      </ol>
+	                </li>
+	                <li><a href="#sec0" class="2"><span class="glyphicon glyphicon-wrench"></span> Ευκαιρίες</a>
+	                </li>
+	                <li><a href="#panw" class="3"><span class="glyphicon glyphicon-chevron-up"></span> Επάνω</a>
+	                </li>
+	            </ul>
+
+	        </div>
+
+          
+	        <!--right PARTIALLLLLLLL-->
+            <div class="col-md-6">
+              <% if (!@eeooo.nil?) %>
+            <% @eeooo.each do |a| %>
+             <h2 id="<%= a.wgr %>" class="123">Αναλώσημα</br>
+             <small><%= a.text %></small></h2>
+             <%= image_tag(a.image, size: '200') %></br></br>
+             
+            <h3>Δείτε τις τιμές επιλέγοντας κωδικό προιότος</h3>
+            <% if user_signed_in? %>
+            <button type="button" class="btn btn-primary order" data-toggle="modal" data-target="#<%=a.id%>">Επιλογή κωδικού προιόντος</button>
+            <% end %>
+            <hr class="">
+
+            <!-- Modal -->
+                    <div class="modal fade" id="<%=a.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close mesi" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Το προιόν προστέθηκε στο καλάθι σας</h4>
+                          </div>
+                          <div class="modal-body">
+                            <h3><%= a.text %></h3>
+                            <%= image_tag(a.image, size: "200") %></br></br>
+                  
+                          <%= form_for @router, url: {action: "analosima_router_send"} do |f| %>
+                            <% if @router.errors.any? %>
+                              <div id="error_explanation">
+
+                                <ul>
+                                <% @router.errors.full_messages.each do |message| %>
+                                  <li><%= message %></li>
+                                  <li><%= flash[:danger] = message %></li>
+                                <% end %>
+                                </ul>
+                              </div>
+                            <% end %>
+                            <%= f.collection_select :artikel, Analosima.where(:wgr => a.wgr), :artikel, :text_price, {}, {class: "form-control"} %>
+
+                            <div class="actions">
+                              <%= button_tag(type: 'submit', class: "btn btn-primary button") do %>
+                              <i class="icon-ok icon-white"></i> Πρόσθήκη στο καλάθι
+                              <% end %>
+                            
+                            </div>
+
+                          <% end %>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+            <% end %> <!--end tou each-->
+            <% end %> <!--end tou if-->
+
+            
+            <hr class="">
+             <h4 class=""><a href="/" class="">Eνα λινκ που ισως χρειαστει</a></h4>
+
+            <hr class="">
+        </div>
+
+        <%= render 'deksia_mprara' %>
+    </div>
+    <!--/row-->
+</div>
+
+<script>
+  //Μαλλον θα βαλω μετριτες για δευτερη φορα και τετεια!!
+  $(".mesa_lipantika").hide();
+  $(".frezarisma_HSS").show();
+  $(".frezarisma_VHM").show();
+  $(".mesa_frezarisma_HSS").hide();
+  $(".mesa_frezarisma_VHM").hide();
+
+
+
+  //Γινεται πολυ ευκολα με toggle αλλα και ετσι ειναι
+  $(document).ready(function(){
+  $(".frezarisma").click(function(){
+    $(".mesa_lipantika").hide(); //Δεν θέλουμε ξαναπαντοντας να κρηβετε!!
+    $(".frezarisma_HSS").show();
+    $(".frezarisma_VHM").show();
+    $(".mesa_frezarisma_HSS").hide();
+    $(".mesa_frezarisma_VHM").hide();      
+        
+  });
+
+  $(".frezarisma_HSS").click(function(){
+    $(".mesa_frezarisma_HSS").show();
+    $(".mesa_frezarisma_VHM").hide();
+  });
+
+  $(".frezarisma_VHM").click(function(){
+    $(".mesa_frezarisma_HSS").hide();
+    $(".mesa_frezarisma_VHM").show();
+  });
+
+
+  $(".button").click(function(){
+    
+    location.reload();
+    
+  });
+
+  /*  Δεν χρειαζονται γιατι ολα θα γινουν λινκ
+  $(".frezarisma").click(function(){
+    $(".mesa_frezarisma").show();
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".2").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+
+  $(".3").click(function(){
+    $(".mesa_lipantika").hide();
+  });
+  */
+
+});
+
+</script>
